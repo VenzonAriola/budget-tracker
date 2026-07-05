@@ -29,7 +29,11 @@ export default function LoginPage() {
     setLoading(false);
 
     if (res?.error) {
-      toast({ title: 'Sign in failed', description: 'Check your email and password.', variant: 'destructive' });
+      const description = res.error === 'CredentialsSignin'
+        ? 'Check your email and password, or create an account first if you have not registered yet.'
+        : 'Unable to sign in right now. Please try again.';
+
+      toast({ title: 'Sign in failed', description, variant: 'destructive' });
       return;
     }
 
