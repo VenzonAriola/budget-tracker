@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    --font-body: 'Segoe UI', Arial, sans-serif;
+    --font-mono: 'Cascadia Mono', 'Consolas', monospace;
+
+    --background: 220 23% 97%;
+    --foreground: 227 39% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 227 39% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 227 39% 13%;
+
+    --primary: 227 39% 13%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 227 39% 13%;
+
+    --muted: 220 20% 94%;
+    --muted-foreground: 225 12% 46%;
+
+    --accent: 220 20% 94%;
+    --accent-foreground: 227 39% 13%;
+
+    --destructive: 8 71% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 88%;
+    --input: 220 16% 88%;
+    --ring: 227 39% 13%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 227 39% 8%;
+    --foreground: 220 23% 96%;
+
+    --card: 227 33% 11%;
+    --card-foreground: 220 23% 96%;
+
+    --popover: 227 33% 11%;
+    --popover-foreground: 220 23% 96%;
+
+    --primary: 220 23% 96%;
+    --primary-foreground: 227 39% 13%;
+
+    --secondary: 227 25% 16%;
+    --secondary-foreground: 220 23% 96%;
+
+    --muted: 227 25% 16%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 227 25% 16%;
+    --accent-foreground: 220 23% 96%;
+
+    --destructive: 8 71% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 227 20% 20%;
+    --input: 227 20% 20%;
+    --ring: 220 20% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Ledger-style hairline rows, the app's signature texture */
+.ledger-row {
+  border-bottom: 1px solid hsl(var(--border));
+}
+.ledger-row:last-child {
+  border-bottom: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 8px;
+}
